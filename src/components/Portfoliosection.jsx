@@ -251,7 +251,7 @@ export default function PortfolioSection() {
       tags: ["React", "JavaScript", "CSS", "Figma"],
       headerBg: C.pink,
       link: "https://mindpace-ruddy.vercel.app",
-      image: "/assets/Screenshot 2026-05-17 190534.png",
+      image: "public\\assets\\assets\\Screenshot 2026-05-17 190534.png",
     },
     {
       id: 2,
@@ -261,7 +261,7 @@ export default function PortfolioSection() {
       tags: ["Figma", "Dashboard", "RFID"],
       headerBg: C.blueMd,
       link: "https://www.figma.com/design/4iybXLacSUuQvCd2WqXCwQ/Dashboard-IoT?node-id=121-54&t=xdpk2V0phxnpWS5S-1",
-      image: "/assets/Desktop - 4.png",
+      image: "public/assets/assets/Desktop - 4.png",
     }
   ];
 
