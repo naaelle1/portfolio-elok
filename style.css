@@ -1,0 +1,335 @@
+@import "tailwindcss";
+:root {
+    --primary-blue: #0052FF;
+    --lime-green: #C1FF00;
+    --white: #ffffff;
+    --dark: #0a0a0a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #2453FF;
+    color: var(--white);
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative; 
+    background-color: var(--primary-blue);
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.15) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1.5px, transparent 1.5px);
+    background-size: 60px 60px;
+    z-index: 1; 
+}
+
+.hero-content {
+    position: relative;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; 
+}
+
+/* Teks Utama Desktop */
+.bg-text {
+    position: absolute;
+    top: 40%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18vw;
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: 5px; 
+    color: white; 
+    opacity: 0.45; 
+    z-index: 2; 
+    pointer-events: none;
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+    display: block !important;
+}
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+}
+
+/* --- FLOATING ACCENTS --- */
+.accent {
+    position: absolute;
+    color: var(--lime-green);
+    font-weight: 900;
+    pointer-events: none;
+    user-select: none;
+}
+
+.accent-braces {
+    top: 15%; 
+    left: 15%;
+    font-size: 16rem;
+    transform: rotate(-25deg);
+    z-index: 1; 
+    opacity: 0.5;
+}
+
+.accent-hash {
+    bottom: 12%; 
+    right: 5%;
+    font-size: 20rem; 
+    transform: rotate(20deg); 
+    z-index: 6; 
+    opacity: 0.5; 
+}
+
+.accent-sparkle {
+    top: 25%;
+    right: 18%;
+    font-size: 4rem;
+    color: white; 
+    z-index: 4;
+}
+
+.accent-arrow {
+    bottom: 40%;
+    left: 28%;
+    font-size: 7rem;
+    transform: rotate(15deg);
+    z-index: 1;
+}
+
+/* --- PROFILE CARD CENTER --- */
+.profile-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20; 
+    position: relative;
+}
+
+.profile-card {
+    position: relative;
+    z-index: 10;
+    transform: rotate(-3deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+    margin-top: -10px; 
+}
+
+.profile-card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(25px); 
+    padding: 25px; 
+    border-radius: 25px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.profile-img {
+    width: 180px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+/* --- BUTTON & BADGE --- */
+.center-badge {
+    position: relative; 
+    margin-top: 20px; 
+    transform: rotate(5deg); 
+    z-index: 20; 
+    transition: 0.5s;
+}
+
+.center-badge:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.badge {
+    background: var(--lime-green);
+    color: var(--dark);
+    padding: 12px 28px; 
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+}
+
+/* --- DESKTOP POSITIONING --- */
+.floating-desc {
+    position: absolute;
+    bottom: 30%; 
+    left: 10%;
+    z-index: 10;
+    max-width: 250px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border-left: 5px solid var(--lime-green);
+    transform: rotate(-2deg); 
+    transition: 0.5s;
+}
+
+.floating-desc:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.floating-desc p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: white;
+}
+
+.tagline-container {
+    position: absolute;
+    bottom: 30%;
+    right: 10%; 
+    text-align: right; 
+    max-width: 350px;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.tagline-container:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.tagline {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1; 
+    color: var(--white);
+    text-transform: uppercase; 
+}
+
+.tagline span {
+    color: var(--lime-green);
+    display: block; 
+    margin-top: 5px;
+}
+
+.white-footer {
+    background: var(--white);
+    height: 50vh; 
+    border-radius: 50px 50px 0 0;
+    position: relative;
+    z-index: 6;
+    margin-top: -50px; 
+}
+
+/* --- TOGGLE MANIPULASI NAMA (DESKTOP) --- */
+.desktop-only {
+    display: inline;
+}
+.mobile-only {
+    display: none;
+}
+
+
+/* ── FIX ALIGNMENT UNTUK LAYAR MOBILE (max-width: 768px) ── */
+@media (max-width: 768px) {
+    /* 1. Paksa kontainer utama mengikuti flow flexbox murni ke tengah vertikal & horizontal */
+    .hero-content {
+        height: auto !important;
+        min-height: calc(100vh - 80px);
+        padding: 40px 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 24px !important;
+    }
+
+    /* 2. Sembunyikan tulisan raksasa "VISUAL THINKER" sesuai request */
+    .bg-text {
+        display: none !important;
+    }
+
+    /* Sembunyikan aksen melayang desktop agar space bersih */
+    .accent {
+        display: none !important;
+    }
+
+    /* 3. Atur ulang Headline agar rata tengah murni */
+    .tagline-container {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        left: auto !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        order: 1 !important; /* Posisi teratas */
+    }
+
+    .tagline {
+        font-size: 1.65rem !important;
+        line-height: 1.2 !important;
+    }
+
+    /* 4. MENGUNCI FOTO PROFIL PAS DI TENGAH LAYAR */
+    .profile-group {
+        position: relative !important;
+        margin: 0 auto !important;
+        width: fit-content !important;
+        order: 2 !important; /* Posisi tengah */
+    }
+
+    .profile-card {
+        margin-top: 0 !important;
+    }
+
+    /* 5. Atur ulang Deskripsi bawah agar rata tengah murni */
+    .floating-desc {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        max-width: 320px !important;
+        width: 100% !important;
+        text-align: center !important;
+        border-left: none !important;
+        border-top: 4px solid var(--lime-green) !important;
+        margin: 0 auto !important;
+        order: 3 !important; /* Posisi terbawah */
+    }
+
+    /* 6. Sembunyikan kata KIRANA di mobile, ganti dengan K. */
+    .desktop-only {
+        display: none !important;
+    }
+    .mobile-only {
+        display: inline !important;
+    }
+}
