@@ -263,7 +263,7 @@ const Navbar = () => {
             })}
 
             <a
-              href="/assets/CV ELOK CHANDRA KIRANA.pdf"
+              href="public\assets\CV ELOK CHANDRA KIRANA.pdf"
               download="CV_Elok.pdf"
               onClick={() => setIsOpen(false)}
               style={{

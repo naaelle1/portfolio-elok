@@ -262,6 +262,16 @@ export default function PortfolioSection() {
       headerBg: C.blueMd,
       link: "https://www.figma.com/design/4iybXLacSUuQvCd2WqXCwQ/Dashboard-IoT?node-id=121-54&t=xdpk2V0phxnpWS5S-1",
       image: "public/assets/assets/Desktop - 4.png",
+    },
+     {
+      id: 3,
+      title: "Abyss Marine Website",
+      category: "Web Design",
+      desc: "Collaborative website project exploring the beauty of Banda Sea. Contributed to UI design, visual layout, and frontend asset integration.",
+      tags: ["Figma", "HTML", "CSS"],
+      headerBg: C.blueLt,
+      link: "https://abyss-banda.vercel.app/",
+      image: "public/assets/assets/Screenshot 2026-05-18 215120.png",
     }
   ];
 
@@ -370,11 +380,15 @@ export default function PortfolioSection() {
             </span>
           </motion.div>
 
-          <motion.div
+          <motion.a
+            href="https://portfolio-elok-7n7i3z9jc-naaelle1s-projects.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
             variants={scaleIn}
             onMouseEnter={() => setFeatHovered(true)}
             onMouseLeave={() => setFeatHovered(false)}
             style={{
+              display: "block",
               background: "#fff",
               border: "3px solid #111",
               borderRadius: 24,
@@ -382,6 +396,8 @@ export default function PortfolioSection() {
               boxShadow: featHovered ? "8px 8px 0 #111" : "4px 4px 0 #111",
               transform: featHovered ? "translate(-2px,-2px)" : "translate(0,0)",
               transition: "box-shadow 0.2s cubic-bezier(0.34,1.56,0.64,1), transform 0.2s cubic-bezier(0.34,1.56,0.64,1)",
+              cursor: "pointer",
+              textDecoration: "none",
             }}
           >
             <div className="feat-inner" style={{ display: "flex" }}>
@@ -418,14 +434,14 @@ export default function PortfolioSection() {
                   </div>
                 </div>
                 <p style={{ fontSize: 13.5, color: "#666", lineHeight: 1.65, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  Modern personal portfolio website with neo-brutalist UI and interactive sections. Designed for impact, built for performance.
+                  A clean and interactive personal space designed to present professional projects, creative works, and technical skills with high performance and optimized user experience.
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                   {["React", "Framer Motion", "JavaScript", "Figma"].map(t => <Tag key={t} label={t} dark />)}
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.a>
         </motion.div>
 
         {/* ── GRID LABEL ── */}

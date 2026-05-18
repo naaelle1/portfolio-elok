@@ -102,12 +102,11 @@ const G = () => (
 
     /* ── RESPONSIVE ─────────────────────────────────────────────── */
 
-    /* About grid: 3col → 1col on mobile */
     .about-grid {
       display: grid;
       grid-template-columns: 1.05fr 1.1fr .95fr;
       gap: 22px;
-      align-items: start;
+      align-items: stretch;
     }
     @media (max-width: 900px) {
       .about-grid {
@@ -120,7 +119,6 @@ const G = () => (
       }
     }
 
-    /* Skills tools grid: 2col → 1col on small */
     .skills-tools-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -133,7 +131,6 @@ const G = () => (
       }
     }
 
-    /* Tool icon grid: 4col → responsive */
     .tool-icons-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -146,7 +143,6 @@ const G = () => (
       }
     }
 
-    /* Section padding: shrink on mobile */
     .section-about {
       padding: 64px 48px 72px;
       max-width: 1200px;
@@ -174,7 +170,6 @@ const G = () => (
       .section-sep { padding: 0 16px; }
     }
 
-    /* About heading */
     .about-heading {
       font-size: clamp(52px, 8vw, 96px);
       font-weight: 800;
@@ -186,7 +181,6 @@ const G = () => (
       .about-heading { letter-spacing: -1.5px; }
     }
 
-    /* Skills heading */
     .skills-heading {
       font-size: clamp(44px, 7vw, 84px);
       font-weight: 800;
@@ -198,7 +192,6 @@ const G = () => (
       .skills-heading { letter-spacing: -1.5px; }
     }
 
-    /* Skills header row: row → col on mobile */
     .skills-header-row {
       display: flex;
       align-items: flex-end;
@@ -215,36 +208,19 @@ const G = () => (
       }
     }
 
-    /* Soft skills badges: wrap nicely */
     .softskill-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
 
-    /* Bottom deco stars: hide some on mobile */
     .deco-stars { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 56px; }
     @media (max-width: 480px) { .deco-stars { margin-top: 32px; gap: 8px; } }
 
-    /* Education middle col: hide on 900-col-2 layout, show again on 1col */
     @media (max-width: 900px) and (min-width: 601px) {
       .edu-col { grid-column: 1 / -1; }
     }
 
-    /* Open to work badge */
-    .open-badge {
-      margin-top: 24px;
-      padding: 14px 18px;
-      background: #C8FF57;
-      border: 2.5px solid #111;
-      border-radius: 14px;
-      box-shadow: 4px 4px 0 #111;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    /* Proficiency card padding */
     .proficiency-card {
       padding: 34px 36px;
       margin-bottom: 28px;
@@ -253,13 +229,11 @@ const G = () => (
       .proficiency-card { padding: 22px 18px; }
     }
 
-    /* Tool box text slightly smaller on very small screens */
     @media (max-width: 360px) {
       .tool-box { padding: 10px 6px; }
       .tool-box span { font-size: 9px !important; }
     }
 
-    /* About header row */
     .about-header-row {
       display: flex;
       align-items: flex-start;
@@ -271,7 +245,6 @@ const G = () => (
       .about-header-row { margin-bottom: 28px; gap: 16px; }
     }
 
-    /* Floating stars: hide some on mobile to avoid overflow */
     .float-star-right {
       position: absolute;
       right: 40px;
@@ -472,7 +445,7 @@ export default function AboutSection() {
           <div className="float float-star-right3" style={{ animationDelay: "1.8s" }}><Star4 size={12} color="#7B61FF" /></div>
         </div>
 
-        {/* 3-col (→ 2-col → 1-col) grid */}
+        {/* 3-col grid */}
         <div className="about-grid">
 
           {/* LEFT */}
@@ -535,7 +508,7 @@ export default function AboutSection() {
           </div>
 
           {/* MIDDLE: Education */}
-          <div className="edu-col">
+          <div className="edu-col" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 22 }}>
               <div style={{ padding: "6px 14px", background: "#111", borderRadius: 8, display: "flex", alignItems: "center", gap: 8 }}>
                 <Star4 size={10} color="#C8FF57" />
@@ -544,6 +517,7 @@ export default function AboutSection() {
               <ArrowDown style={{ opacity: .4, marginLeft: 6 }} />
             </div>
 
+            {/* Timeline */}
             <div style={{ position: "relative", paddingLeft: 28 }}>
               <div style={{
                 position: "absolute", left: 8, top: 16, bottom: 16,
@@ -551,7 +525,7 @@ export default function AboutSection() {
                 background: "repeating-linear-gradient(to bottom, #111 0, #111 6px, transparent 6px, transparent 12px)",
               }} />
               {education.map((edu, i) => (
-                <div key={i} style={{ position: "relative", marginBottom: i < 2 ? 20 : 0 }}>
+                <div key={i} style={{ position: "relative", marginBottom: i < 2 ? 28 : 0 }}>
                   <div style={{
                     position: "absolute", left: -23, top: 22,
                     width: 16, height: 16, borderRadius: "50%",
@@ -586,14 +560,6 @@ export default function AboutSection() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="open-badge">
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <div style={{ width: 9, height: 9, borderRadius: "50%", background: "#111" }} />
-                <span className="sg" style={{ fontSize: 13, fontWeight: 700, color: "#111" }}>Open to Internships</span>
-              </div>
-              <Star4 size={13} />
             </div>
           </div>
 
