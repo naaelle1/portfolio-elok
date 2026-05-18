@@ -251,7 +251,7 @@ export default function PortfolioSection() {
       tags: ["React", "JavaScript", "CSS", "Figma"],
       headerBg: C.pink,
       link: "https://mindpace-ruddy.vercel.app",
-      image: "public\\assets\\assets\\Screenshot 2026-05-17 190534.png",
+      image: "/assets/assets/Screenshot 2026-05-17 190534.png",
     },
     {
       id: 2,
@@ -413,7 +413,28 @@ export default function PortfolioSection() {
                   backgroundImage: `linear-gradient(rgba(36,96,247,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(36,96,247,0.08) 1px, transparent 1px)`,
                   backgroundSize: "28px 28px",
                 }} />
-                <BrowserMock hovered={featHovered} />
+                <motion.div
+                  animate={{ scale: featHovered ? 1.04 : 1, rotate: featHovered ? -1 : 0 }}
+                  transition={{ duration: 0.35, ease: [0.34, 1.56, 0.64, 1] }}
+                  style={{
+                    width: 250, background: "#fff",
+                    border: "2.5px solid #111", borderRadius: 12,
+                    overflow: "hidden", boxShadow: "5px 5px 0 rgba(17,17,17,0.2)",
+                    position: "relative", zIndex: 1,
+                    display: "flex"
+                  }}
+                >
+                  <img 
+                    src="/assets/assets/Screenshot (821).png"
+                    alt="Personal Portfolio Website"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                      objectFit: "cover",
+                    }}
+                  />
+                </motion.div>
                 <div style={{
                   position: "absolute", top: 14, right: 14,
                   background: C.pink, border: "2px solid #111", borderRadius: 10,

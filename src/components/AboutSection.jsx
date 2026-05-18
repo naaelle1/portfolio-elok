@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 /* ── Fonts & Global Styles ─────────────────────────────────────── */
 const G = () => (
@@ -390,6 +391,16 @@ function EduThumb({ initials, bg }) {
 /* ══════════════════════════════════════════════════════════════════ */
 export default function AboutSection() {
 
+  const slideUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+  };
+
   const designTools = [
     { name: "Figma",       icon: <FigmaIcon /> },
     { name: "Photoshop",   icon: <PSIcon /> },
@@ -417,8 +428,14 @@ export default function AboutSection() {
       <section id="about" className="section-about">
 
         {/* Header row */}
-        <div className="about-header-row">
-          <div style={{ position: "relative" }}>
+        <motion.div 
+          className="about-header-row"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <motion.div variants={slideUp} style={{ position: "relative" }}>
             <h1 className="sg about-heading">
               ABOUT<br />ME
             </h1>
@@ -426,9 +443,9 @@ export default function AboutSection() {
               width: "100%", height: 5, background: "#2460F7",
               borderRadius: 3, marginTop: 8, border: "1.5px solid #111",
             }} />
-          </div>
+          </motion.div>
 
-          <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" }}>
+          <motion.div variants={slideUp} style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" }}>
             <div className="sticker wiggle" style={{ background: "#F5C6D8", color: "#111" }}>
               <Star4 size={10} /> WHO AM I?
             </div>
@@ -438,18 +455,24 @@ export default function AboutSection() {
                 scroll down
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="float float-star-right"><Star4 size={22} color="#2460F7" /></div>
-          <div className="float float-star-right2" style={{ animationDelay: "1s" }}><Star6 size={14} color="#E8407A" /></div>
-          <div className="float float-star-right3" style={{ animationDelay: "1.8s" }}><Star4 size={12} color="#7B61FF" /></div>
-        </div>
+          <motion.div variants={slideUp} className="float float-star-right"><Star4 size={22} color="#2460F7" /></motion.div>
+          <motion.div variants={slideUp} className="float float-star-right2" style={{ animationDelay: "1s" }}><Star6 size={14} color="#E8407A" /></motion.div>
+          <motion.div variants={slideUp} className="float float-star-right3" style={{ animationDelay: "1.8s" }}><Star4 size={12} color="#7B61FF" /></motion.div>
+        </motion.div>
 
         {/* 3-col grid */}
-        <div className="about-grid">
+        <motion.div 
+          className="about-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+        >
 
           {/* LEFT */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+          <motion.div variants={slideUp} style={{ display: "flex", flexDirection: "column", gap: 18 }}>
 
             {/* Intro */}
             <div className="card lift" style={{ padding: "26px 24px" }}>
@@ -505,10 +528,10 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* MIDDLE: Education */}
-          <div className="edu-col" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <motion.div variants={slideUp} className="edu-col" style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 22 }}>
               <div style={{ padding: "6px 14px", background: "#111", borderRadius: 8, display: "flex", alignItems: "center", gap: 8 }}>
                 <Star4 size={10} color="#C8FF57" />
@@ -561,10 +584,10 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
+          <motion.div variants={slideUp} style={{ display: "flex", flexDirection: "column", gap: 18 }}>
 
             {/* Interests */}
             <div className="card lift" style={{ padding: "26px 24px" }}>
@@ -613,8 +636,8 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Divider */}

@@ -55,6 +55,15 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   const navBg     = isOpen ? (isLight ? '#ffffff' : C.dark) : (isLight ? 'rgba(255,255,255,0.92)' : 'transparent');
   const navBlur   = isLight ? 'blur(20px)' : 'blur(14px)';
   const navShadow = scrolled && !isOpen
@@ -146,6 +155,7 @@ const Navbar = () => {
               <a
                 key={id}
                 href={href}
+                onClick={(e) => handleScroll(e, id)}
                 style={{
                   textDecoration: 'none',
                   display:        'block',
@@ -246,7 +256,7 @@ const Navbar = () => {
                 <a
                   key={id}
                   href={href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleScroll(e, id)}
                   style={{
                     textDecoration: 'none',
                     fontSize:       '20px',
