@@ -261,7 +261,7 @@ export default function PortfolioSection() {
       tags: ["Figma", "Dashboard", "RFID"],
       headerBg: C.blueMd,
       link: "https://www.figma.com/design/4iybXLacSUuQvCd2WqXCwQ/Dashboard-IoT?node-id=121-54&t=xdpk2V0phxnpWS5S-1",
-      image: "public/assets/assets/Desktop - 4.png",
+      image: "/assets/assets/Desktop - 4.png",
     },
      {
       id: 3,
@@ -271,7 +271,7 @@ export default function PortfolioSection() {
       tags: ["Figma", "HTML", "CSS"],
       headerBg: C.blueLt,
       link: "https://abyss-banda.vercel.app/",
-      image: "public/assets/assets/Screenshot 2026-05-18 215120.png",
+      image: "/assets/assets/Screenshot 2026-05-18 215120.png",
     }
   ];
 
