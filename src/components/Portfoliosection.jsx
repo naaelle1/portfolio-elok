@@ -381,7 +381,7 @@ export default function PortfolioSection() {
           </motion.div>
 
           <motion.a
-            href="https://portfolio-elok-7n7i3z9jc-naaelle1s-projects.vercel.app"
+            href="https://portfolio-elok.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             variants={scaleIn}
