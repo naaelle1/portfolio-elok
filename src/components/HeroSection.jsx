@@ -91,7 +91,15 @@ const HeroSection = () => {
               </div>
             </div>
             <div className="center-badge">
-              <button className="badge">GET STARTED</button>
+              <button 
+                className="badge"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                GET STARTED
+              </button>
             </div>
           </div>
 
