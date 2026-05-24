@@ -180,7 +180,7 @@ const Navbar = () => {
         <div style={{ display: 'flex', alignItems: 'center', zIndex: 10001 }}>
           <a
             className="nav-desktop-cta"
-            href="/assets/CV ELOK CHANDRA KIRANA.pdf"
+            href="/assets/CV ELOK CHANDRA KIRANA.pdf?v=2"
             download="CV_Elok.pdf"
             style={{
               cursor:         'pointer',
@@ -273,7 +273,7 @@ const Navbar = () => {
             })}
 
             <a
-              href="/assets/CV ELOK CHANDRA KIRANA.pdf"
+              href="/assets/CV ELOK CHANDRA KIRANA.pdf?v=2"
               download="CV_Elok.pdf"
               onClick={() => setIsOpen(false)}
               style={{
