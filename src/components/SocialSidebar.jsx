@@ -38,7 +38,7 @@ const SOCIAL_LINKS = [
   { id: "linkedin",  label: "LinkedIn",  Icon: IconLinkedIn,  href: "https://www.linkedin.com/in/elok-chandra-kirana-604319354/", target: "_blank" },
   { id: "instagram", label: "Instagram", Icon: IconInstagram, href: "https://instagram.com/elokcc",                                   target: "_blank" },
   { id: "github",    label: "GitHub",    Icon: IconGitHub,    href: "https://github.com/naaelle1",                                target: "_blank" },
-  { id: "discord",   label: "Discord",   Icon: IconDiscord,   href: "https://discord.com/users/801680373041332294",                                                          target: "_blank" },
+  { id: "discord",   label: "Discord",   Icon: IconDiscord,   href: "https://discord.gg/5yhzxGvM",                                                          target: "_blank" },
 ];
 
 /* ── Styles ──────────────────────────────────────── */
